@@ -1,7 +1,12 @@
-FROM python:3
+FROM python:3.8
 
-RUN pip install pillow
+RUN pip3 install pillow
+RUN pip3 install climage 
 
-ADD clientHTTP.py .
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
 
 CMD ["python", "clientHTTP.py"]

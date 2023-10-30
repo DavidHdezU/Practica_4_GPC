@@ -159,8 +159,6 @@ Existen cinco categorías (o clases) diferentes de códigos HTTP. Cada una repre
 #### David Hernández Urióstegui - 420003708
 #### Luis Mario Escobar Rosales - 420003818
 
-[<img src="https://img.shields.io/badge/gmail-D14836?&style=for-the-badge&logo=gmail&logoColor=white"/>](https://mail.google.com/mail/?view=cm&source=mailto&to=Dhdezu@ciencias.unam.mx)
-
 
 
 
