@@ -2,6 +2,7 @@ import socket
 import sys
 from PIL import Image
 from io import BytesIO
+import climage # Biblioteca para imprimir imagenes en la terrminal, ya que en Docker usar directamente pillow da error
 
 USER_AGENTS_MAP = {
     1 : "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.3",
@@ -64,8 +65,10 @@ class HttpClient:
             return f"Problema al conectar con el host: {self.host}"
                 
         if is_image:
-            image = Image.open(BytesIO(content))
-            image.show()
+            img = Image.open(BytesIO(content)).convert('RGB')
+            converted = climage.convert_pil(img, is_unicode=True)
+            print(converted)
+            print()
             
             return "La respuesta es una imagen, por lo cual intentar hacer un decode() con la respuesta causaría un error\n por lo cual sólo se muestra la imagen"
                     
